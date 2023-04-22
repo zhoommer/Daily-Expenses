@@ -1,0 +1,14 @@
+ @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.container {
+    margin-top: 3px;
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-gap: 0.5em;
+    font-family: 'Delicious Handrawn', cursive;
+}

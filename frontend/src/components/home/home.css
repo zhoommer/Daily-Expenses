@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.doughnutDiv {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  margin-left: 10%;
+}
+
+.doughnut {
+  width: 40%;
+}
+
+#chart-info {
+  background-color: #e5e7e9;
+}
+
+.labels:nth-child(1) {
+  color: rgba(255, 99, 132, 1);
+}
+
+.labels:nth-child(2) {
+  color: rgba(54, 162, 235, 1);
+}
+.labels:nth-child(3) {
+  color: rgba(255, 206, 86, 1);
+}
+.labels:nth-child(4) {
+  color: rgba(75, 192, 192, 1);
+}
+.labels:nth-child(5) {
+  color: rgba(153, 102, 255, 1);
+}
+.labels:nth-child(6) {
+  color: rgba(255, 159, 64, 1);
+}
+.labels:nth-child(7) {
+  color: rgba(27, 38, 49, 1);
+}
+
+.labels:nth-child(8) {
+  color: rgba(100, 30, 22, 1);
+}
+
+@media only screen and (max-width: 375px) {
+  .doughnutDiv {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #chart-info {
+    display: none;
+    visibility: hidden;
+  }
+}
