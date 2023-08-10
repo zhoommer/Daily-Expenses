@@ -37,12 +37,13 @@ export default function Profile(props) {
         console.log(err);
       });
   };
+  console.log(user);
   return (
     <div className="profileComp">
       <div className="profileCard">
         <div className="profileImage">
           <img
-            src={require(`../../asset/images/${props.photo.photo}`)}
+            src="#"
             alt="user"
           />
         </div>

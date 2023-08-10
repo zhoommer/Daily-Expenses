@@ -8,10 +8,12 @@ import instance from "../../api/axios";
 import alertify from "alertifyjs";
 import { useDispatch, useSelector } from "react-redux";
 import { getStates } from "../../redux/features/homeStates/homeStatesSlice";
+import axiosInstance from "../../api/axios";
 
 export default function Expenses() {
   const [expenses, setExpenses] = useState([]);
   const [pageSize, setPageSize] = useState([]);
+  const [cat, setCat] = useState([]);
   const dispatch = useDispatch();
   const [addExpenseValues, setAddExpenseValues] = useState([
     {
@@ -22,6 +24,8 @@ export default function Expenses() {
       new_category: "",
     },
   ]);
+
+  console.log(addExpenseValues);
   useEffect(() => {
     if (!localStorage.getItem("token")) {
       window.location.href = "/login";
@@ -41,6 +45,7 @@ export default function Expenses() {
 
     dispatch(getStates());
     getExpenses();
+    getCategories();
   }, []);
 
   const getExpenses = (page) => {
@@ -63,7 +68,7 @@ export default function Expenses() {
         setExpenses(res.data.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data.message);
       });
   };
 
@@ -103,7 +108,21 @@ export default function Expenses() {
       }, 1000);
     });
   };
-  const categories = useSelector((state) => state.homeState.labels.data);
+  // const categories = useSelector((state) => state.homeState.labels.data);
+
+  const getCategories = () => {
+    axiosInstance({
+      method: "GET",
+      url: "/categories",
+    })
+      .then((res) => {
+        setCat(res.data.data);
+      })
+      .catch((err) => {
+        alertify.error(err);
+      });
+  };
+  
   return (
     <div>
       <div className="addExpense">
@@ -124,18 +143,16 @@ export default function Expenses() {
             onChange={handleChange}
           />
           <select onChange={handleChange} name="category">
-			<option selected>Category</option>
-            {categories ? (
-              categories.labels.map((label) => (
-                <option value={label} key={label.index}>
-                  {label}
-                </option>
+            <option selected>Category</option>
+            {cat.length > 0 ? (
+              cat.map((item) => (
+                <option value={item.name} key={item.id}>{item.name}</option>
               ))
             ) : (
               <option>No Category!</option>
             )}
           </select>
-          </div>
+        </div>
         <button onClick={addExpense}>Add Expense</button>
       </div>
       <Table className="table">
