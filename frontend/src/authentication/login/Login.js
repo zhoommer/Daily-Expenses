@@ -90,9 +90,7 @@ export default class Login extends Component {
       })
         .then(() => {
           alertify.success("Registration Successful");
-          // setTimeout(() => {
-          //   window.location.reload();
-          // }, 1000);
+          window.location.href = "/login"
         })
         .catch((err) => {
           console.log(err);

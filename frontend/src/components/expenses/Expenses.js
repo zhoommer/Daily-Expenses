@@ -155,7 +155,7 @@ export default function Expenses() {
         </div>
         <button onClick={addExpense}>Add Expense</button>
       </div>
-      <Table className="table">
+      <Table className="table table-hover">
         <thead>
           <tr>
             <th>#</th>

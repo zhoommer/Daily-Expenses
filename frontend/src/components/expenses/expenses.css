@@ -195,6 +195,7 @@ td > button:hover {
   transition: 250ms;
 }
 
+
 .pagination {
   display: flex;
   justify-content: center;

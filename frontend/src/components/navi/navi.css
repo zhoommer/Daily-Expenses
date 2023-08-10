@@ -16,6 +16,7 @@
   box-shadow: 1px 3px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
+
 .header-brand {
   margin: 5px;
 }
@@ -113,6 +114,12 @@
 
 .hr-toggle-div > a > span {
   margin-left: 10px;
+}
+
+
+.side-bar-dark-mode {
+  background-color: #262626;
+  color: #fff;
 }
 
 @media only screen and (max-width: 376px) {
