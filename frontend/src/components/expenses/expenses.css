@@ -6,8 +6,11 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.dashboard {
+
+input::placeholder {
+  font-size: 13px;
 }
+
 
 .header {
   line-height: 3em;
