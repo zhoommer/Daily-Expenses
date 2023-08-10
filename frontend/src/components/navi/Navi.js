@@ -136,14 +136,14 @@ function Navi() {
           </a>
         </div>
       </div>
-      <div>
+      {/* <div>
         <FormGroup>
           <FormControlLabel
             control={<MaterialUISwitch sx={{ m: 1 }} />}
             label="Switch Mode"
           />
         </FormGroup>
-      </div>
+      </div> */}
     </div>
   );
 }
